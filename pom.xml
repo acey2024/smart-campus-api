@@ -17,19 +17,19 @@
     </properties>
 
     <dependencies>
-        <!-- Jersey JAX-RS + Grizzly embedded server -->
+        <!-- Jersey and Grizzly -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!-- HK2 dependency injection -->
+        <!-- HK2 -->
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!-- JSON support via Jackson -->
+        <!-- Jackson for JSON -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
@@ -39,7 +39,7 @@
 
     <build>
         <plugins>
-            <!-- Run with: mvn exec:java -->
+            <!-- exec plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -48,7 +48,7 @@
                     <mainClass>com.smartcampus.SmartCampusApplication</mainClass>
                 </configuration>
             </plugin>
-            <!-- Create fat JAR with all dependencies -->
+            <!-- shade plugin to bundle dependencies -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

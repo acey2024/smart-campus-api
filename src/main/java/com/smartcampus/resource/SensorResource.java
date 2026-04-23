@@ -59,7 +59,6 @@ public class SensorResource {
         return Response.ok(sensor).build();
     }
 
-    // Sub-resource locator — no HTTP method annotation
     @Path("/{sensorId}/readings")
     public SensorReadingResource getSensorReadingResource(@PathParam("sensorId") String sensorId) {
         return new SensorReadingResource(sensorId);

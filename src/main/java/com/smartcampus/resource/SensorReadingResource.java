@@ -54,7 +54,6 @@ public class SensorReadingResource {
         }
         DataStore.readings.computeIfAbsent(sensorId, k -> new ArrayList<>()).add(reading);
 
-        // Side effect: update parent sensor's currentValue
         sensor.setCurrentValue(reading.getValue());
 
         return Response.status(Response.Status.CREATED).entity(reading).build();
